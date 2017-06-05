@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title th:text="${welcome}">spring.springmvc01</title>
+</head>
+<body>
+	<h2>spring-rmi-client</h2>
+
+	<form action="springdataredisFindOne" method="post" role="form">
+		id:<input type="text" name="id" id="id">
+		<button type="submit">查询</button>
+		<br />
+	</form>
+	<br /> 查询结果：
+	<br />
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>PASSWORD</th>
+		</tr>
+		<tr th:each="pan : ${springdataredispan}">
+			<td th:text="${pan.id}"></td>
+			<td th:text="${pan.name}"></td>
+			<td th:text="${pan.passWord}"></td>
+		</tr>
+	</table>
+
+	<br />
+	<br />
+	<form action="springdataredissave" method="post" role="form">
+		id:<input type="text" name="id" id="id"><br> username:<input
+			type="text" name="name" id="name"><br> password:<input
+			type="password" name="password" id="password"><br>
+		enabled:<input type="text" name="enabled" id="enabled"><br>
+		<button type="submit">保存</button>
+		<br />
+	</form>
+
+
+	<h2>spring-http-client</h2>
+
+	<form action="httpspringdataredisFindOne" method="post" role="form">
+		id:<input type="text" name="id" id="id">
+		<button type="submit">查询</button>
+		<br />
+	</form>
+	<br /> 查询结果：
+	<br />
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>PASSWORD</th>
+		</tr>
+		<tr th:each="pan : ${httpspringdataredispan}">
+			<td th:text="${pan.id}"></td>
+			<td th:text="${pan.name}"></td>
+			<td th:text="${pan.passWord}"></td>
+		</tr>
+	</table>
+
+	<br />
+	<br />
+	<form action="httpspringdataredissave" method="post" role="form">
+		id:<input type="text" name="id" id="id"><br> username:<input
+			type="text" name="name" id="name"><br> password:<input
+			type="password" name="password" id="password"><br>
+		enabled:<input type="text" name="enabled" id="enabled"><br>
+		<button type="submit">保存</button>
+		<br />
+	</form>
+
+	<br />
+	<h2>rest-client</h2>
+
+	<form action="restFindOne" method="post" role="form">
+		id:<input type="text" name="id" id="id">
+		<button type="submit">查询</button>
+		<br />
+	</form>
+	<br /> 查询结果：
+	<br />
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>PASSWORD</th>
+		</tr>
+		<tr th:each="pan : ${restFindOnepan}">
+			<td th:text="${pan.id}"></td>
+			<td th:text="${pan.name}"></td>
+			<td th:text="${pan.passWord}"></td>
+		</tr>
+	</table>
+
+</body>
+</html>
